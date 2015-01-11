@@ -1,0 +1,11 @@
+package com.huaking;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class PathTest {
+	public static void main(String[] args) {
+		Path p1 = Paths.get("/work/java");
+		Path p2 = Paths.get(args[0]);
+	}
+}

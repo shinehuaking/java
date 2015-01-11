@@ -1,0 +1,15 @@
+package com.huaking;
+
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class FileIO {
+	
+	public static void main(String[] args) {
+		Charset charset = Charset.forName("utf-8");
+		Path srcP = Paths.get("asset/source.txt");
+		Path destP = Paths.get("asset/dest.txt");
+		Files.newBufferedReader(path)
+	}
+}

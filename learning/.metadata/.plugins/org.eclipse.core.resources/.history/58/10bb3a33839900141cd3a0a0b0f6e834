@@ -1,0 +1,26 @@
+package com.huaking;
+
+import java.io.IOException;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+public class FileOperaction {
+	
+	public static void main(String[] args) {
+		Path p1 = Paths.get("/test/1/1.txt");
+		Path p2 = Paths.get("/test/2/");
+		System.out.println(Files.exists(p1) + " " + Files.isExecutable(p1) +  " " + Files.isWritable(p1));
+		try {
+			//如果文件夹不为空，抛出DirectoryNotEmptyException
+//			Files.delete(path);
+//			Files.deleteIfExists(path);
+			Files.copy(p1, p2, StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,15 @@
+package com.huaking;
+
+import java.net.URI;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class PathTest {
+	public static void main(String[] args) {
+		Path p1 = Paths.get("/work/java");
+		Path p2 = Paths.get(args[0]);
+		Path p3 = Paths.get(URI.create("file:///Users/joe/FileTest.java"));
+		Path p4 = FileSystems.getDefault().getPath("/users/sally");
+	}
+}
