@@ -1,0 +1,21 @@
+package com.huaking;
+
+import java.math.BigDecimal;
+
+public class NullPointerException {
+	public static void main(String[] args) {
+		String literal = "literal";
+//		好的方式
+		"literal Hello".equals(literal);
+//		不好的方式
+		literal.equals("literal Hello");
+		
+//		valueOf代替toString,如果bd为null，bd.toString有可能空指针异常
+		BigDecimal bd = new BigDecimal(50);
+		System.out.println(bd.toString());
+		System.out.println(String.valueOf(bd));
+		
+		
+		
+	}
+}

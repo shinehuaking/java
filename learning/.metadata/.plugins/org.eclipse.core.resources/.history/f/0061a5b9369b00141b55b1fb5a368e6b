@@ -1,0 +1,14 @@
+package com.huaking;
+
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+
+public class DirectoryOperaction {
+	
+	public static void main(String[] args) {
+		Iterable<Path> dirs = FileSystems.getDefault().getRootDirectories();
+		for(Path name:dirs) {
+			
+		}
+	}
+}

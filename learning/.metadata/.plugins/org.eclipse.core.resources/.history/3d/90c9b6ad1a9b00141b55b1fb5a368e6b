@@ -1,0 +1,12 @@
+package com.huaking;
+
+public class NullPointerException {
+	public static void main(String[] args) {
+		String literal = "literal";
+//		好的方式
+		"literal Hello".equals(literal);
+//		不好的方式
+		literal.equals("literal Hello");
+		
+	}
+}

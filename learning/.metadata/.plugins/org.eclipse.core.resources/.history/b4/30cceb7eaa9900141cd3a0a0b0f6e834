@@ -1,0 +1,16 @@
+package com.huaking;
+
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
+public class RandomAccessFile {
+	
+	public static void main(String[] args) {
+		String s = "I was here!\n";
+		byte data[] = s.getBytes();
+		ByteBuffer out = ByteBuffer.wrap(data);
+		ByteBuffer copy = ByteBuffer.allocate(12);
+		Path path = new Path("");
+		FileChannel fc = (FileChannel.open(, options))
+	}
+}

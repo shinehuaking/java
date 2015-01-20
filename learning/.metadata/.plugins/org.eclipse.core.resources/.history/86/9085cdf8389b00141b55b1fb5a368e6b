@@ -1,0 +1,30 @@
+package com.huaking;
+
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class DirectoryFilter {
+	
+	public static void main(String[] args) {
+		
+		//过滤文件可以用glob
+		Path path = Paths.get("/work/document/java");
+		DirectoryStream<Path> stream = Files.newDirectoryStream(path, "*.{java,class,jar}"))； 
+			    for (Path entry: stream) {
+			        System.out.println(entry.getFileName());
+			    }
+		
+		try {
+			DirectoryStream<Path> stream = Files.newDirectoryStream(path);
+			for(Path file:stream) {
+				System.out.println(file.getFileName());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

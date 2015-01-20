@@ -1,0 +1,31 @@
+package com.huaking;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+public class RandomAccessFile {
+	
+	public static void main(String[] args) {
+		String s = "I was here!\n";
+		byte data[] = s.getBytes();
+		ByteBuffer out = ByteBuffer.wrap(data);
+		ByteBuffer copy = ByteBuffer.allocate(12);
+		Path path = Paths.get("asset/source.txt");
+		try {
+			FileChannel fc = FileChannel.open(path,StandardOpenOption.READ, StandardOpenOption.WRITE);
+			int nread;
+			do {
+				nread = fc.read(out);
+				
+				
+			} while (nread != -1 && copy.hasRemaining());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

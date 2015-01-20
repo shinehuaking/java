@@ -1,0 +1,23 @@
+package com.huaking;
+
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class DirectoryOperaction {
+	
+	public static void main(String[] args) {
+		Iterable<Path> dirs = FileSystems.getDefault().getRootDirectories();
+		for(Path name:dirs) {
+			System.out.println(name);
+		}
+		
+		try {
+			Files.createDirectories(Paths.get("/foot/bar/test"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

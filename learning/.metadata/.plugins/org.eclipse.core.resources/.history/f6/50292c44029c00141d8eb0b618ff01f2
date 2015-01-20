@@ -1,0 +1,9 @@
+package com.huaking;
+
+public class LegacyCode {
+	
+	public static void main(String[] args) {
+		//Java 6
+		File file = new File("Readme.TXT");
+	}
+}
